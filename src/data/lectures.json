@@ -1,0 +1,25 @@
+{
+  "lectures": [
+    {
+      "id": "1",
+      "title": "Node.js",
+      "block": "1",
+      "date": "20190410",
+      "lecturer": "Felix"
+    },
+    {
+      "id": "2",
+      "title": "Node.js",
+      "block": "2",
+      "date": "20190410",
+      "lecturer": "Dustin"
+    },
+    {
+      "id": "3",
+      "title": "Node.js",
+      "block": "5",
+      "date": "20190411",
+      "lecturer": "Melvin"
+    }
+  ]
+}

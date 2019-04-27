@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": "001",
+      "username": "Yasu"
+    },
+    {
+      "id": "002",
+      "username": "Miyazaki"
+    },
+    {
+      "id": "003",
+      "username": "Tanaka"
+    },
+    {
+      "id": "004",
+      "username": "Tarou"
+    },
+    {
+      "id": "005",
+      "username": "Yamazaki"
+    }
+  ]
+}
