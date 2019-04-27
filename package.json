@@ -7,7 +7,7 @@
   "author": "yasmiyazaki <kizayami.yasu@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "mocha test/test.js && yarn lint",
+    "test": "node test/initialize.js && mocha test/test.js",
     "lint": "eslint --fix ./**/*.js",
     "start": "node ./src/index.js",
     "migrate": "knex migrate:latest --knexfile services/db/knexfile.js",

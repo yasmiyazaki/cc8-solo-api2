@@ -1,25 +1,28 @@
 {
   "lectures": [
     {
-      "id": "1",
-      "title": "Node.js",
+      "title": "How to be a pirate king",
       "block": "1",
       "date": "20190410",
-      "lecturer": "Felix"
+      "lecturer": 1
     },
     {
-      "id": "2",
-      "title": "Node.js",
+      "title": "How to be the strongest swordsman",
       "block": "2",
       "date": "20190410",
-      "lecturer": "Dustin"
+      "lecturer": "2"
     },
     {
-      "id": "3",
-      "title": "Node.js",
+      "title": "How to forcast weather",
       "block": "5",
       "date": "20190411",
-      "lecturer": "Melvin"
+      "lecturer": "3"
+    },
+    {
+      "title": "How to lie",
+      "block": "5",
+      "date": "20190411",
+      "lecturer": "3"
     }
   ]
 }
