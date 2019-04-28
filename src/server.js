@@ -8,7 +8,7 @@ const createServer = () => {
   const app = express();
   app.use(express.json());
   app.get("/", (req, res) => {
-    res.sendfile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/index.html");
   });
   app.get("/users", (req, res) => {
     const num = req.query.limit ? req.query.limit : 100;

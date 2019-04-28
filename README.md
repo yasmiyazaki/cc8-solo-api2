@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1.  [Introduction](#introduction)
-1.  [Overview of Topics](#overview-of-topics)
+1.  [Overview of API](#overview-of-api)
     1.  [Read User](#read-user)
     1.  [Create User](#create-user)
     1.  [Update User](#update-user)
@@ -18,7 +18,7 @@
 This was created during my time as a student at Code Chrysalis.
 This RESTful API provides features to create, update, delete and read OnePiece data.
 
-## Overview of Topics
+## Overview of API
 
 ### Read User
 
