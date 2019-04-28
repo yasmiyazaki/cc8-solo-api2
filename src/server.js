@@ -35,10 +35,16 @@ const createServer = () => {
   app.post("/users/", (req, res) => {
     const incomingUser = req.body.username;
 
+    if (!incomingUser) {
+      return res.sendStatus(404);
+    }
+
     knex("users")
       .returning("username")
       .insert({ username: incomingUser })
-      .then(user => res.send(user));
+      .then(user => {
+        return res.send(user);
+      });
   });
   app.patch("/users/", (req, res) => {
     const changeThisUser = req.body.changeThisUser;
@@ -57,24 +63,20 @@ const createServer = () => {
       .del()
       .then(() => res.send(deleteThisUser));
   });
+  app.get("/pirates/:p_name/users", (req, res) => {
+    const pirate = req.params.p_name;
+    knex("users")
+      .where({ pirate })
+      .select()
+      .then(result => {
+        if (result) {
+          res.send(result);
+        } else {
+          res.sendStatus(404);
+        }
+      });
+  });
 
-  // Lecture API **does not update database**
-  app.get("/lectures", (req, res) => {
-    const { limit } = req.query;
-    if (limit) {
-      const lectureList = [];
-      for (let i = 0; i < limit; i++) {
-        lectureList.push(lectures[i]);
-      }
-      res.send(lectureList);
-    } else {
-      res.send(lectures);
-    }
-  });
-  app.post("/lectures/", (req, res) => {
-    lectures.push(req.body);
-    res.send(lectures);
-  });
   return app;
 };
 

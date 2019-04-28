@@ -42,12 +42,30 @@ describe("classManager API Server", () => {
       res.should.have.status(404);
     });
   });
+
   describe("POST /users/add", () => {
     it("should add a user.", async () => {
       const user = { username: "Shanks" };
       const res = await request.post("/users").send(user);
       const addedUser = JSON.parse(res.text).pop();
+      knex("users")
+        .where("users.username", "Shanks")
+        .del()
+        .then();
       addedUser.should.eql(user.username);
+    });
+    it("should return status code 404 if username not provided properly", async () => {
+      const user = { name: "Shanks" };
+      const res = await request.post("/users").send(user);
+      res.should.have.status(404);
+    });
+  });
+
+  describe("GET /pirates/:p_name/users", () => {
+    it("should return all users that belong to Straw Hat", async () => {
+      const res = await request.get("/pirates/Straw Hat Pirates/users/");
+      const crews = JSON.parse(res.text);
+      crews.map(crew => crew.username).length.should.equal(10);
     });
   });
 });

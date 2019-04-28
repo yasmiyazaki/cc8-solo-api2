@@ -6,36 +6,52 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex("users").insert([
         {
-          username: "Monkey D. Luffy"
+          username: "Monkey D. Luffy",
+          pirate: "Straw Hat Pirates"
         },
         {
-          username: "Roronoa Zoro"
+          username: "Roronoa Zoro",
+          pirate: "Straw Hat Pirates"
         },
         {
-          username: "Nami"
+          username: "Nami",
+          pirate: "Straw Hat Pirates"
         },
         {
-          username: "Usoppu"
+          username: "Usoppu",
+          pirate: "Straw Hat Pirates"
         },
         {
-          username: "Vinsmoke Sanji"
+          username: "Vinsmoke Sanji",
+          pirate: "Straw Hat Pirates"
         },
         {
-          username: "Chopper"
+          username: "Chopper",
+          pirate: "Straw Hat Pirates"
         },
         {
-          username: "Nico Robin"
+          username: "Nico Robin",
+          pirate: "Straw Hat Pirates"
         },
         {
-          username: "Franky"
+          username: "Franky",
+          pirate: "Straw Hat Pirates"
         },
         {
-          username: "Brook"
+          username: "Brook",
+          pirate: "Straw Hat Pirates"
         },
         {
-          username: "Jimbei"
+          username: "Jimbei",
+          pirate: "Straw Hat Pirates"
+        },
+        {
+          username: "Nefeltari Vivi"
+        },
+        {
+          username: "Buggy the Clown",
+          pirate: "Buggy's Band of Pirates"
         }
       ]);
     });
 };
-p;
