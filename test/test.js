@@ -8,6 +8,8 @@ const { users } = require("../src/data/users");
 const config = require("../config");
 const knex = require("knex")(config.db);
 
+const sinon = require("sinon");
+
 const server = createServer();
 describe("classManager API Server", () => {
   let request;
@@ -16,6 +18,17 @@ describe("classManager API Server", () => {
   });
   describe("GET /users", () => {
     it("should return the full list of Users", async () => {
+      const res = await request.get("/users");
+      const allUsers = JSON.parse(res.text);
+      const usersFromFile = users.map(user => user.username);
+      allUsers.map(user => user.username).should.deep.equal(usersFromFile);
+    });
+    it("should return a fake result using sinon", async () => {
+      const fakeObj = { text: null };
+      const stub = sinon.stub(request, "get").callsFake(() => {
+        fakeObj.text = JSON.stringify(users);
+        return fakeObj;
+      });
       const res = await request.get("/users");
       const allUsers = JSON.parse(res.text);
       const usersFromFile = users.map(user => user.username);

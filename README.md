@@ -8,6 +8,7 @@
     1.  [Create User](#create-user)
     1.  [Update User](#update-user)
     1.  [Delete User](#delete-user)
+    1.  [Read User by pirate](#delete-user)
 1.  [Envirionment](#envirionment)
     1.  [Postgres](#postgres)
     1.  [Resources](#resources)
@@ -15,7 +16,7 @@
 ## Introduction
 
 This was created during my time as a student at Code Chrysalis.
-This RESTful API provides features to create, update, delete and read user data on your own.
+This RESTful API provides features to create, update, delete and read OnePiece data.
 
 ## Overview of Topics
 
@@ -41,6 +42,12 @@ Use body to pass the data you want to update with JSON format.
 Use body to pass the data you want to delete with JSON format. (Same as creation)
 
 (ex: {"username": "Gold D Roger"})
+
+### Read User from Pirate
+
+User params to get crews on the specific pirate.
+
+specify by pirate name `/pirates/Straw Hat Pirates/users/`
 
 ## Environment
 
