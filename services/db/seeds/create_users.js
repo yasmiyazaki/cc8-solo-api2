@@ -38,3 +38,4 @@ exports.seed = function(knex, Promise) {
       ]);
     });
 };
+p;

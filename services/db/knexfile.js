@@ -4,7 +4,7 @@ module.exports = {
   client: "pg",
   connection: {
     host: "127.0.0.1",
-    database: "classmanager"
+    database: "onepiece"
   },
   seeds: {
     directory: "./seeds/"
