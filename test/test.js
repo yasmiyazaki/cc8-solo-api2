@@ -13,11 +13,6 @@ describe("classManager API Server", () => {
   let request;
   beforeEach(() => {
     request = chai.request(server);
-    Promise.resolve(
-      knex("users")
-        .insert(users)
-        .then(console.log("seed data inserted"))
-    );
   });
   describe("GET /users", () => {
     it("should return the full list of Users", async () => {
@@ -37,10 +32,19 @@ describe("classManager API Server", () => {
       const limitedUsers = JSON.parse(res.text);
       limitedUsers.map(user => user.username).should.eql(usersFromFile);
     });
+    it("should get user data based on provided username", async () => {
+      const res = await request.get("/users/Usoppu");
+      const result = JSON.parse(res.text);
+      result[0].username.should.eql("Usoppu");
+    });
+    it("should return error if user does not exist", async () => {
+      const res = await request.get("/users/Pikachu");
+      res.should.have.status(404);
+    });
   });
   describe("POST /users/add", () => {
     it("should add a user.", async () => {
-      const user = { username: "JINS" };
+      const user = { username: "Shanks" };
       const res = await request.post("/users").send(user);
       const addedUser = JSON.parse(res.text).pop();
       addedUser.should.eql(user.username);

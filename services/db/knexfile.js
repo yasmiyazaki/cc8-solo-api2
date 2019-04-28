@@ -6,6 +6,9 @@ module.exports = {
     host: "127.0.0.1",
     database: "classmanager"
   },
+  seeds: {
+    directory: "./seeds/"
+  },
   port: 5432,
   pool: {
     min: 2,

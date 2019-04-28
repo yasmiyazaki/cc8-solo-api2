@@ -1,5 +1,6 @@
 const config = require("../config");
 const knex = require("knex")(config.db);
+const { users } = require("../src/data/users");
 
 const ignoreError = () => {
   // do nothing
@@ -10,6 +11,12 @@ const clearTable = tableName =>
     .del()
     .catch(ignoreError);
 
-const tables = ["channel_messages", "user_messages", "users", "channels"];
+const tables = ["users"];
 
-Promise.all(tables.map(clearTable)).then(process.exit);
+Promise.all(tables.map(clearTable)).then();
+
+Promise.resolve(
+  knex("users")
+    .insert(users)
+    .then(process.exit)
+);
