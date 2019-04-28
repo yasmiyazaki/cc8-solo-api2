@@ -11,7 +11,7 @@ const createServer = () => {
     res.sendfile(__dirname + "/index.html");
   });
   app.get("/users", (req, res) => {
-    const num = req.query.limit ? req.query.limit : Infinity;
+    const num = req.query.limit ? req.query.limit : 100;
     knex("users")
       .select()
       .limit(num)

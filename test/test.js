@@ -33,6 +33,7 @@ describe("classManager API Server", () => {
       const allUsers = JSON.parse(res.text);
       const usersFromFile = users.map(user => user.username);
       allUsers.map(user => user.username).should.deep.equal(usersFromFile);
+      stub.restore();
     });
     it("should be able to take a query parameter 'limit=n'", async () => {
       const res = await request.get("/users/").query({ limit: 3 });
